@@ -3,7 +3,8 @@ import Task from "./addTask.js";
 export default class TaskManager{
 
     constructor(){
-        this.task = [];
+        this.tasks = [];
+        this._status = false;
     }
 
     addTask(){
@@ -14,11 +15,25 @@ export default class TaskManager{
         let prio = prompt("priority");
 
         const task = new Task(title,description, dueDate, prio);
-        
         this.tasks.push(task);
     }
 
     printTask(){
-        console.log(this.task);
+
+        if(this.tasks.length===0){
+            console.log("No tasks available.");
+            return;
+        }
+        console.log(this.tasks);
     }
+
+    updateStatus(){
+        this._status = !this._status;
+        return;
+    }
+    get status(){
+        debugger;
+        return  this._status?"This task is completed":"This task is uncompleted";
+    }
+
 }

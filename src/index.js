@@ -1,5 +1,7 @@
-import Task from "./addTask.js";
 import TaskManager from "./TaskManager.js";
-import TaskManger from "./TaskManager.js";
+import Project from "./project.js";
 
-const task = new TaskManager();
+const project = new Project();
+project.addTask();
+project.updateStatus();
+project.status;
