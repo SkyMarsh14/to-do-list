@@ -6,12 +6,7 @@ export default class TaskManager{
         this.tasks = [];
     }
 
-    addTask(){
-
-        let title = prompt("title");
-        let description = prompt("description");
-        let dueDate = prompt("due date");
-        let prio = prompt("priority");
+    addTask(title,description,dueDate,prio){
 
         const task = new Task(title,description, dueDate, prio);
         this.tasks.push(task);
