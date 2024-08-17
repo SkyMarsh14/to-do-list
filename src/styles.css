@@ -44,3 +44,27 @@
   #root, #__next {
     isolation: isolate;
   }
+
+  body{
+    display:grid;
+    grid-template-columns:1fr 5fr;
+    grid-template-rows: 10vh 1fr;
+  }
+  header{
+    display:flex;
+    justify-content: center;
+    grid-row:1/2;
+    grid-column:1/-1;
+  }
+
+  aside{
+    display:flex;
+    flex-direction: column;
+    gap:3em;
+  }
+
+  nav{
+    display:flex;
+    flex-direction: column;
+    gap:3ch;
+  }
