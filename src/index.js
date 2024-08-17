@@ -1,13 +1,6 @@
 import "./styles.css";
 import Project from "./project.js";
+import { defaultProject } from "./util.js";
 
-const defaultProject = new Project;
-defaultProject.name = "default";
-
-const projects = [defaultProject];
-
-function addProject(projectName){
-    const project = new Project;
-    project.name = projectName;
-    projects.push(project);
-}
+defaultProject;
+debugger;

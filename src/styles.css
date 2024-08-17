@@ -48,23 +48,34 @@
   body{
     display:grid;
     grid-template-columns:1fr 5fr;
-    grid-template-rows: 10vh 1fr;
+    grid-template-rows: 10vh 1fr 5vh;
   }
   header{
     display:flex;
     justify-content: center;
     grid-row:1/2;
     grid-column:1/-1;
+    align-items: center;
   }
 
   aside{
     display:flex;
     flex-direction: column;
-    gap:3em;
+    gap:3ch;
   }
 
   nav{
     display:flex;
     flex-direction: column;
     gap:3ch;
+    button{
+      text-align: left;
+    }
+  }
+  footer{
+    grid-row:3/4;
+    grid-column:1/-1;
+    display:flex;
+    justify-content: center;
+    align-items: center;
   }
