@@ -4,7 +4,6 @@ export default class TaskManager{
 
     constructor(){
         this.tasks = [];
-        this._status = false;
     }
 
     addTask(){
@@ -27,13 +26,14 @@ export default class TaskManager{
         console.log(this.tasks);
     }
 
-    updateStatus(){
-        this._status = !this._status;
+    updateStatus(index){
+        this.tasks[index].status = !this.tasks[index].status;
         return;
     }
-    get status(){
-        debugger;
-        return  this._status?"This task is completed":"This task is uncompleted";
-    }
 
+    getStatus = (index) =>{
+        const status = this.tasks[index].status;
+        console.log(`Status for task ${index} : ${status}`);
+        return status;
+    }
 }
