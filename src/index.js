@@ -1,6 +1,9 @@
 import "./styles.css";
 import Project from "./project.js";
-import { defaultProject } from "./util.js";
+import { defaultProject,projects } from "./util.js";
+import displayInbox from "./tabs/inbox.js";
 
-defaultProject;
+defaultProject.addTask();
+displayInbox();
+
 debugger;

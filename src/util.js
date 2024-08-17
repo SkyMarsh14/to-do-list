@@ -1,12 +1,12 @@
+import Project from "./project.js";
 export const contentDiv = document.querySelector('main');
+export const defaultProject = new Project;
+export const projects = [defaultProject];
 
-const defaultProject = new Project;
 defaultProject.name = "default";
-
-const projects = [defaultProject];
-
 function addProject(projectName){
     const project = new Project;
     project.name = projectName;
     projects.push(project);
 }
+
