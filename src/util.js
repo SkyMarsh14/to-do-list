@@ -7,7 +7,7 @@ export function clearContentDiv(){
 }
 
 defaultProject.name = "default";
-function addProject(projectName){
+export function addProject(projectName){
     const project = new Project;
     project.name = projectName;
     projects.push(project);

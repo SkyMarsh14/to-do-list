@@ -2,8 +2,6 @@ import {contentDiv,defaultProject, clearContentDiv} from '../util.js';
 
 export default function displayInbox(){
     clearContentDiv();
-    const btn = document.querySelector('.inbox');
-    btn.style.backgroundColor = "red";
 
     defaultProject.tasks.forEach((task)=>{
         const container = document.createElement('div');
