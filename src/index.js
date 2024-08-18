@@ -5,7 +5,7 @@ import displayInbox from "./tabs/inbox.js";
 import displayUpcoming from "./tabs/upcoming.js";
 import  "./tab-switch.js";
 import "./modalHandler.js";
-import { addProjectBtn, addTaskBtn, taskForm } from "./modalHandler.js";
+import { addProjectBtn, addTaskBtn, taskForm, closeModalBtn } from "./modalHandler.js";
 
 defaultProject.addTask("Coding", 'learn linux command line','none');
 defaultProject.addTask("learn EN", 'read English books', 'none', 'low');

@@ -14,9 +14,15 @@ addTaskBtn.addEventListener("click",()=>{
     taskDialog.showModal();
 })
 
-const taskForm = document.querySelector('.task-dialog');
+const closeModalBtn = document.querySelectorAll('.closeModalBtn');
+closeModalBtn.forEach((btn)=>{
+    btn.addEventListener("click",()=>{
+        projectDialog.close();
+        taskDialog.close();
+});
+});
 
-taskForm.addEventListener("submit", (e)=>{
+taskDialog.addEventListener("submit", (e)=>{
     e.preventDefault();
 
     const title = document.querySelector('#title').value;
@@ -26,7 +32,32 @@ taskForm.addEventListener("submit", (e)=>{
 
     defaultProject.addTask(title,description,dueDate,prio);
 
+    document.querySelector('#task-form').reset();
+
     taskDialog.close();
+
+});
+
+projectDialog.addEventListener("submit", (e)=>{
+    e.preventDefault();
+
+
+    const project = document.querySelector('#projectInput').value;
+
+    addProject(project);
+    const projectListDiv = document.querySelector('.projects');
+    projectListDiv.innerHTML='';
+
+    let rest;
+    [projects[0], ...rest] = projects;
+    
+    rest.forEach((each)=>{
+        const projectDiv = document.createElement('div');
+        projectDiv.textContent = each.name;
+        projectListDiv.append(projectDiv);
+    })
+
 })
 
-export {addProjectBtn, addTaskBtn, taskForm};
+
+export {addProjectBtn, addTaskBtn, taskDialog, closeModalBtn};
