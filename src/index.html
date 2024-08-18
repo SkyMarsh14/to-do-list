@@ -31,9 +31,22 @@
     </dialog>
     <dialog class="task-dialog">
         <form action="">
-            <input type="text">
-            <button>Add Task</button>
-            <button class="closeModalBtn">Cancel</button>
+            <label for="title">Title</label>
+            <input type="text" id ="title" required>
+
+            <label for="description">Description</label>
+            <input type="text" id ="description">
+
+            <label for="dueDate">Due date</label>
+            <input type="text" id ="dueDate">
+
+            <label for="prio">Priority</label>
+            <input type="text" id ="prio">
+
+            <div class="buttonsContainer">
+                <button type = "submit">Add Task</button>
+                <button class="closeModalBtn">Cancel</button>
+            </div>
         </form>
     </dialog>
 </body>

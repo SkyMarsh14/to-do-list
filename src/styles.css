@@ -86,3 +86,10 @@
   dialog{
     margin:auto;
   }
+  dialog label{
+    display:block;
+  }
+  .buttonsContainer{
+    display:flex;
+    justify-content: space-between;
+  }
