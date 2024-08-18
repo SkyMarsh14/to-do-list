@@ -1,4 +1,4 @@
-import { defaultProject,projects, addProject} from "./util.js";
+import { defaultProject, addProject} from "./util.js";
 
 const projectDialog = document.querySelector('.project-dialog');
 const taskDialog = document.querySelector('.task-dialog');
@@ -41,23 +41,18 @@ taskDialog.addEventListener("submit", (e)=>{
 projectDialog.addEventListener("submit", (e)=>{
     e.preventDefault();
 
-
     const project = document.querySelector('#projectInput').value;
 
     addProject(project);
     const projectListDiv = document.querySelector('.projects');
-    projectListDiv.innerHTML='';
 
-    let rest;
-    [projects[0], ...rest] = projects;
     
-    rest.forEach((each)=>{
-        const projectDiv = document.createElement('div');
-        projectDiv.textContent = each.name;
-        projectListDiv.append(projectDiv);
-    })
+    const projectDiv = document.createElement('button');
+    projectDiv.classList.add('projectTab', project);
+    projectDiv.textContent = project;
+    projectListDiv.appendChild(projectDiv);
 
-})
+    document.querySelector('.project-form').reset();
+    projectDialog.close();
+});
 
-
-export {addProjectBtn, addTaskBtn, taskDialog, closeModalBtn};
